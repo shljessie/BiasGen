@@ -17,7 +17,7 @@ from langchain.schema import (
     SystemMessage
 )
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = ""
 
 llm = OpenAI(temperature=0.9)
 # text = "What would be a good company name for a company that makes colorful socks?"

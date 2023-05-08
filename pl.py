@@ -20,9 +20,9 @@ texts = text_splitter.split_documents(documents)
 # embed the text
 # Chroma is a vector store and embeddings database designed from the ground-up to make it easy to build AI applications with embeddings
 # https://www.trychroma.com/
-embeddings = OpenAIEmbeddings(openai_api_key = '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')
+embeddings = OpenAIEmbeddings(openai_api_key = '')
 docsearch = Chroma.from_documents(texts, embeddings)
-qa = RetrievalQA.from_llm(llm=OpenAI(openai_api_key = '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'), retriever=docsearch.as_retriever())
+qa = RetrievalQA.from_llm(llm=OpenAI(openai_api_key = ''), retriever=docsearch.as_retriever())
 
 example_gen_chain = QAGenerateChain.from_llm(OpenAI(openai_api_key = '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'))
 new_examples = example_gen_chain.apply_and_parse([{"doc": t} for t in texts[:5]])
